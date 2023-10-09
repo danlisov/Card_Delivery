@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
     private String generateDate(int daysAdd, String pattern) {
@@ -25,7 +25,7 @@ public class CardDeliveryTest {
 
         $("[data-test-id='city'] input").setValue("Калуга");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-        $("[data-test-id='date'] input").setValue(generateDate(5, "dd.MM.yyyy"));
+        $("[data-test-id='date'] input").setValue(planningDate);
         $("[data-test-id='name'] input").setValue("Лысов Денис");
         $("[data-test-id='phone'] input").setValue("+79157140687");
         $("[data-test-id='agreement']").click();
