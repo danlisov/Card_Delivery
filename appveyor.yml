@@ -1,4 +1,4 @@
-image: Ubuntu 
+image: Ubuntu
 
 stack: jdk 11
 
@@ -10,7 +10,7 @@ build: off
 
 install:
   - java -jar ./artifacts/app-card-delivery.jar -port=9999 &
-  - - chmod +x gradlew
+  - chmod +x gradlew
 
 build_script:
   - ./gradlew test -Dselenide.headless=true --info
